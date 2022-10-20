@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-  <h1> {{ group.title }} </h1>
-  <p>{{group.description }}</p>
+  <h1> {{ group.title}} </h1>
+  <p>{{group.description|linebreaks }}</p>
   {% for post in posts %}
     <ul>
       <li>
@@ -16,7 +16,7 @@
         Дата публикации: {{ post.pub_date|date:"d E Y" }}
       </li>
     </ul>
-    <p>{{ post.text }}</p>    
+    <p>{{ post.text|linebreaks }}</p>    
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}
